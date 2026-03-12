@@ -1,0 +1,237 @@
+SuperAnimalConversionTables: null
+Task: medaka
+TrainingFraction:
+- 0.9
+alphavalue: 0.7
+batch_size: 8
+bodyparts:
+- nose
+- rightfin
+- leftfin
+- center
+- body1
+- body2
+- tail
+ch_size: 8
+colormap: rainbow
+corner2move2:
+- 50
+- 50
+cropping: false
+date: Nov10
+default_augmenter: default
+default_net_type: resnet_50
+default_track_method: null
+detector_batch_size: 1
+detector_snapshotindex: -1
+dotsize: 8
+engine: pytorch
+identity: true
+iteration: 6
+move2corner: true
+multianimalproject: false
+numframes2pick: 20
+optimizer: adam
+pcutoff: 0.6
+project_path: C:\medaka
+rner: true
+scorer: nakayama
+skeleton:
+- - center
+  - body1
+- - nose
+  - center
+- - leftfin
+  - center
+- - body1
+  - body2
+- - body2
+  - tail
+- - rightfin
+  - center
+skeleton_color: black
+snapshotindex: 5
+start: 0
+stop: 1
+uniquebodyparts: []
+video_sets:
+  C:\Users\tomoy>C:\B4-first\resources\videos\test.mp4:
+    crop: 0, 1920, 0, 1080
+  C:\medaka\videos\output_20240809.mp4:
+    crop: 0, 1920, 0, 1080
+  C:\medaka\videos\output_20250402-1.mp4:
+    crop: 0, 216, 0, 216
+  C:\medaka\videos\output_20250402-10.mp4:
+    crop: 0, 210, 0, 212
+  C:\medaka\videos\output_20250402-11.mp4:
+    crop: 0, 216, 0, 210
+  C:\medaka\videos\output_20250402-2.mp4:
+    crop: 0, 216, 0, 212
+  C:\medaka\videos\output_20250402-5.mp4:
+    crop: 0, 216, 0, 212
+  C:\medaka\videos\output_20250402-6.mp4:
+    crop: 0, 214, 0, 216
+  C:\medaka\videos\output_20250402-7.mp4:
+    crop: 0, 212, 0, 218
+  C:\medaka\videos\output_20250402-8.mp4:
+    crop: 0, 206, 0, 214
+  C:\medaka\videos\output_20250402-9.mp4:
+    crop: 0, 214, 0, 214
+  C:\medaka\videos\output_20250509-1.mp4:
+    crop: 0, 380, 0, 370
+  C:\medaka\videos\output_20250509-2.mp4:
+    crop: 0, 388, 0, 370
+  C:\medaka\videos\output_20250509-3.mp4:
+    crop: 0, 390, 0, 372
+  C:\medaka\videos\output_20250512-1.mp4:
+    crop: 0, 318, 0, 354
+  C:\medaka\videos\output_20250512-2.mp4:
+    crop: 0, 322, 0, 330
+  C:\medaka\videos\output_20250512-3.mp4:
+    crop: 0, 318, 0, 342
+  C:\medaka\videos\output_20250512-4.mp4:
+    crop: 0, 348, 0, 358
+  C:\medaka\videos\output_20250512-5.mp4:
+    crop: 0, 346, 0, 346
+  C:\medaka\videos\output_20250512-6.mp4:
+    crop: 0, 350, 0, 344
+  C:\medaka\videos\output_20250512-7.mp4:
+    crop: 0, 354, 0, 348
+  C:\medaka\videos\output_20250512-8.mp4:
+    crop: 0, 348, 0, 358
+  C:\medaka\videos\output_20250512-9.mp4:
+    crop: 0, 344, 0, 348
+  C:\medaka\videos\output_20250520-1.mp4:
+    crop: 0, 364, 0, 372
+  C:\medaka\videos\output_20250520-10.mp4:
+    crop: 0, 390, 0, 394
+  C:\medaka\videos\output_20250520-12.mp4:
+    crop: 0, 372, 0, 388
+  C:\medaka\videos\output_20250520-13.mp4:
+    crop: 0, 364, 0, 386
+  C:\medaka\videos\output_20250520-14.mp4:
+    crop: 0, 390, 0, 386
+  C:\medaka\videos\output_20250520-15.mp4:
+    crop: 0, 382, 0, 384
+  C:\medaka\videos\output_20250520-16.mp4:
+    crop: 0, 386, 0, 388
+  C:\medaka\videos\output_20250520-2.mp4:
+    crop: 0, 386, 0, 374
+  C:\medaka\videos\output_20250520-3.mp4:
+    crop: 0, 392, 0, 372
+  C:\medaka\videos\output_20250520-4.mp4:
+    crop: 0, 366, 0, 394
+  C:\medaka\videos\output_20250520-5.mp4:
+    crop: 0, 394, 0, 396
+  C:\medaka\videos\output_20250520-7.mp4:
+    crop: 0, 386, 0, 380
+  C:\medaka\videos\output_20250520_normal-8.mp4:
+    crop: 0, 370, 0, 372
+  C:\medaka\videos\output_20250530-1.mp4:
+    crop: 0, 400, 0, 428
+  C:\medaka\videos\output_20250530-10.mp4:
+    crop: 0, 438, 0, 420
+  C:\medaka\videos\output_20250530-2.mp4:
+    crop: 0, 430, 0, 428
+  C:\medaka\videos\output_20250530-3.mp4:
+    crop: 0, 434, 0, 428
+  C:\medaka\videos\output_20250530-4.mp4:
+    crop: 0, 426, 0, 418
+  C:\medaka\videos\output_20250530-6.mp4:
+    crop: 0, 432, 0, 428
+  C:\medaka\videos\output_20250530-7.mp4:
+    crop: 0, 438, 0, 436
+  C:\medaka\videos\output_20250530-8.mp4:
+    crop: 0, 424, 0, 436
+  C:\medaka\videos\output_20250530-9.mp4:
+    crop: 0, 426, 0, 426
+  C:\medaka\videos\output_20250707-1.mp4:
+    crop: 0, 374, 0, 378
+  C:\medaka\videos\output_20250707-2.mp4:
+    crop: 0, 374, 0, 376
+  C:\medaka\videos\output_20250707-3.mp4:
+    crop: 0, 374, 0, 370
+  C:\medaka\videos\output_20250707-4.mp4:
+    crop: 0, 362, 0, 372
+  C:\medaka\videos\output_20250707-5.mp4:
+    crop: 0, 368, 0, 370
+  C:\medaka\videos\output_20250707_normal-9.mp4:
+    crop: 0, 366, 0, 368
+  C:\medaka\videos\output_20250718-1.mp4:
+    crop: 0, 464, 0, 500
+  C:\medaka\videos\output_20250718-2.mp4:
+    crop: 0, 498, 0, 502
+  C:\medaka\videos\output_20250718-3.mp4:
+    crop: 0, 504, 0, 498
+  C:\medaka\videos\output_20250916-1.mp4:
+    crop: 0, 372, 0, 382
+  C:\medaka\videos\output_20250916-2.mp4:
+    crop: 0, 376, 0, 374
+  C:\medaka\videos\output_20250916-5.mp4:
+    crop: 0, 372, 0, 370
+  C:\medaka\videos\output_20250916-6.mp4:
+    crop: 0, 376, 0, 382
+  C:\medaka\videos\output_20250916-7.mp4:
+    crop: 0, 374, 0, 388
+  C:\medaka\videos\output_20250916-8.mp4:
+    crop: 0, 368, 0, 378
+  C:\medaka\videos\output_20250916-9.mp4:
+    crop: 0, 374, 0, 372
+  C:\medaka\videos\output_20251021-1.mp4:
+    crop: 0, 212, 0, 208
+  C:\medaka\videos\output_20251021-10.mp4:
+    crop: 0, 214, 0, 216
+  C:\medaka\videos\output_20251021-11.mp4:
+    crop: 0, 212, 0, 218
+  C:\medaka\videos\output_20251021-12.mp4:
+    crop: 0, 202, 0, 212
+  C:\medaka\videos\output_20251021-13.mp4:
+    crop: 0, 210, 0, 206
+  C:\medaka\videos\output_20251021-14.mp4:
+    crop: 0, 210, 0, 208
+  C:\medaka\videos\output_20251021-15.mp4:
+    crop: 0, 214, 0, 212
+  C:\medaka\videos\output_20251021-2.mp4:
+    crop: 0, 216, 0, 208
+  C:\medaka\videos\output_20251021-3.mp4:
+    crop: 0, 206, 0, 208
+  C:\medaka\videos\output_20251021-4.mp4:
+    crop: 0, 200, 0, 208
+  C:\medaka\videos\output_20251021-5.mp4:
+    crop: 0, 212, 0, 214
+  C:\medaka\videos\output_20251021-6.mp4:
+    crop: 0, 216, 0, 214
+  C:\medaka\videos\output_20251021-7.mp4:
+    crop: 0, 210, 0, 208
+  C:\medaka\videos\output_20251021-8.mp4:
+    crop: 0, 202, 0, 206
+  C:\medaka\videos\output_20251021-9.mp4:
+    crop: 0, 214, 0, 206
+  C:\medaka\videos\output_20251024-1.mp4:
+    crop: 0, 208, 0, 212
+  C:\medaka\videos\output_20251024-10.mp4:
+    crop: 0, 212, 0, 206
+  C:\medaka\videos\output_20251024-11.mp4:
+    crop: 0, 208, 0, 208
+  C:\medaka\videos\output_20251024-12.mp4:
+    crop: 0, 212, 0, 208
+  C:\medaka\videos\output_20251024-2.mp4:
+    crop: 0, 212, 0, 210
+  C:\medaka\videos\output_20251024-3.mp4:
+    crop: 0, 214, 0, 214
+  C:\medaka\videos\output_20251024-4.mp4:
+    crop: 0, 208, 0, 212
+  C:\medaka\videos\output_20251024-5.mp4:
+    crop: 0, 212, 0, 208
+  C:\medaka\videos\output_20251024-6.mp4:
+    crop: 0, 206, 0, 208
+  C:\medaka\videos\output_20251024-7.mp4:
+    crop: 0, 210, 0, 214
+  C:\medaka\videos\output_20251024-8.mp4:
+    crop: 0, 212, 0, 218
+  C:\medaka\videos\output_20251024-9.mp4:
+    crop: 0, 210, 0, 214
+x1: 0
+x2: 640
+y1: 277
+y2: 624
