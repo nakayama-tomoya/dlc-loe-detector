@@ -1,0 +1,31 @@
+transformar:Compose(
+    RandomHorizontalFlip(p=0.5)
+    RandomVerticalFlip(p=0.5)
+    ColorJitter(brightness=(0.7, 1.3), contrast=(0.7, 1.3), saturation=(0.7, 1.3), hue=None)
+    Resize(size=(224, 224), interpolation=bilinear, max_size=None, antialias=True)
+    ToTensor()
+)
+criterion:BCELoss()
+optimaizer:Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0001
+    maximize: False
+    weight_decay: 0
+)
+Epoch[1/10],train_acc:0.9677,train_loss:0.1445,val_loss:0.1911,val_acc:0.9323
+Epoch[2/10],train_acc:0.9879,train_loss:0.0448,val_loss:0.4121,val_acc:0.8326
+Epoch[3/10],train_acc:0.9913,train_loss:0.0293,val_loss:0.4657,val_acc:0.8391
+Epoch[4/10],train_acc:0.9931,train_loss:0.0222,val_loss:0.2662,val_acc:0.9276
+Epoch[5/10],train_acc:0.9942,train_loss:0.0188,val_loss:0.3277,val_acc:0.8938
+Epoch[6/10],train_acc:0.9950,train_loss:0.0162,val_loss:0.3860,val_acc:0.8788
+Epoch[7/10],train_acc:0.9954,train_loss:0.0142,val_loss:0.4138,val_acc:0.8798
+Epoch[8/10],train_acc:0.9959,train_loss:0.0130,val_loss:0.5312,val_acc:0.8918
+Epoch[9/10],train_acc:0.9961,train_loss:0.0123,val_loss:0.5819,val_acc:0.8615
+Epoch[10/10],train_acc:0.9965,train_loss:0.0109,val_loss:0.6411,val_acc:0.8574
