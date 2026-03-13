@@ -1,0 +1,149 @@
+2025-10-30 17:13:22 Training with configuration:
+2025-10-30 17:13:22 data:
+2025-10-30 17:13:22   bbox_margin: 20
+2025-10-30 17:13:22   colormode: RGB
+2025-10-30 17:13:22   inference:
+2025-10-30 17:13:22     normalize_images: True
+2025-10-30 17:13:22   train:
+2025-10-30 17:13:22     affine:
+2025-10-30 17:13:22       p: 0.5
+2025-10-30 17:13:22       rotation: 30
+2025-10-30 17:13:22       scaling: [0.5, 1.25]
+2025-10-30 17:13:22       translation: 0
+2025-10-30 17:13:22     crop_sampling:
+2025-10-30 17:13:22       width: 448
+2025-10-30 17:13:22       height: 448
+2025-10-30 17:13:22       max_shift: 0.1
+2025-10-30 17:13:22       method: hybrid
+2025-10-30 17:13:22     gaussian_noise: 12.75
+2025-10-30 17:13:22     motion_blur: True
+2025-10-30 17:13:22     normalize_images: True
+2025-10-30 17:13:22 device: auto
+2025-10-30 17:13:22 inference:
+2025-10-30 17:13:22   multithreading:
+2025-10-30 17:13:22     enabled: True
+2025-10-30 17:13:22     queue_length: 4
+2025-10-30 17:13:22     timeout: 30.0
+2025-10-30 17:13:22   compile:
+2025-10-30 17:13:22     enabled: False
+2025-10-30 17:13:22     backend: inductor
+2025-10-30 17:13:22   autocast:
+2025-10-30 17:13:22     enabled: False
+2025-10-30 17:13:22 metadata:
+2025-10-30 17:13:22   project_path: C:\medaka
+2025-10-30 17:13:22   pose_config_path: C:\medaka\dlc-models-pytorch\iteration-5\medakaNov10-trainset100shuffle1\train\pytorch_config.yaml
+2025-10-30 17:13:22   bodyparts: ['nose', 'rightfin', 'leftfin', 'center', 'body1', 'body2', 'tail']
+2025-10-30 17:13:22   unique_bodyparts: []
+2025-10-30 17:13:22   individuals: ['animal']
+2025-10-30 17:13:22   with_identity: True
+2025-10-30 17:13:22 method: bu
+2025-10-30 17:13:22 model:
+2025-10-30 17:13:22   backbone:
+2025-10-30 17:13:22     type: ResNet
+2025-10-30 17:13:22     model_name: resnet50_gn
+2025-10-30 17:13:22     output_stride: 16
+2025-10-30 17:13:22     freeze_bn_stats: False
+2025-10-30 17:13:22     freeze_bn_weights: False
+2025-10-30 17:13:22   backbone_output_channels: 2048
+2025-10-30 17:13:22   heads:
+2025-10-30 17:13:22     bodypart:
+2025-10-30 17:13:22       type: HeatmapHead
+2025-10-30 17:13:22       weight_init: normal
+2025-10-30 17:13:22       predictor:
+2025-10-30 17:13:22         type: HeatmapPredictor
+2025-10-30 17:13:22         apply_sigmoid: False
+2025-10-30 17:13:22         clip_scores: True
+2025-10-30 17:13:22         location_refinement: True
+2025-10-30 17:13:22         locref_std: 7.2801
+2025-10-30 17:13:22       target_generator:
+2025-10-30 17:13:22         type: HeatmapGaussianGenerator
+2025-10-30 17:13:22         num_heatmaps: 7
+2025-10-30 17:13:22         pos_dist_thresh: 17
+2025-10-30 17:13:22         heatmap_mode: KEYPOINT
+2025-10-30 17:13:22         gradient_masking: False
+2025-10-30 17:13:22         generate_locref: True
+2025-10-30 17:13:22         locref_std: 7.2801
+2025-10-30 17:13:22       criterion:
+2025-10-30 17:13:22         heatmap:
+2025-10-30 17:13:22           type: WeightedMSECriterion
+2025-10-30 17:13:22           weight: 1.0
+2025-10-30 17:13:22         locref:
+2025-10-30 17:13:22           type: WeightedHuberCriterion
+2025-10-30 17:13:22           weight: 0.05
+2025-10-30 17:13:22       heatmap_config:
+2025-10-30 17:13:22         channels: [2048, 7]
+2025-10-30 17:13:22         kernel_size: [3]
+2025-10-30 17:13:22         strides: [2]
+2025-10-30 17:13:22       locref_config:
+2025-10-30 17:13:22         channels: [2048, 14]
+2025-10-30 17:13:22         kernel_size: [3]
+2025-10-30 17:13:22         strides: [2]
+2025-10-30 17:13:22     identity:
+2025-10-30 17:13:22       type: HeatmapHead
+2025-10-30 17:13:22       predictor:
+2025-10-30 17:13:22         type: IdentityPredictor
+2025-10-30 17:13:22         apply_sigmoid: True
+2025-10-30 17:13:22       target_generator:
+2025-10-30 17:13:22         type: HeatmapPlateauGenerator
+2025-10-30 17:13:22         num_heatmaps: 1
+2025-10-30 17:13:22         pos_dist_thresh: 17
+2025-10-30 17:13:22         heatmap_mode: INDIVIDUAL
+2025-10-30 17:13:22         gradient_masking: False
+2025-10-30 17:13:22         generate_locref: False
+2025-10-30 17:13:22       criterion:
+2025-10-30 17:13:22         heatmap:
+2025-10-30 17:13:22           type: WeightedBCECriterion
+2025-10-30 17:13:22           weight: 1.0
+2025-10-30 17:13:22       heatmap_config:
+2025-10-30 17:13:22         channels: [2048, 1]
+2025-10-30 17:13:22         kernel_size: [3]
+2025-10-30 17:13:22         strides: [2]
+2025-10-30 17:13:22 net_type: resnet_50
+2025-10-30 17:13:22 runner:
+2025-10-30 17:13:22   type: PoseTrainingRunner
+2025-10-30 17:13:22   gpus: None
+2025-10-30 17:13:22   key_metric: test.mAP
+2025-10-30 17:13:22   key_metric_asc: True
+2025-10-30 17:13:22   eval_interval: 10
+2025-10-30 17:13:22   optimizer:
+2025-10-30 17:13:22     type: AdamW
+2025-10-30 17:13:22     params:
+2025-10-30 17:13:22       lr: 0.0005
+2025-10-30 17:13:22   scheduler:
+2025-10-30 17:13:22     type: LRListScheduler
+2025-10-30 17:13:22     params:
+2025-10-30 17:13:22       lr_list: [[0.0001], [1e-05]]
+2025-10-30 17:13:22       milestones: [90, 120]
+2025-10-30 17:13:22   snapshots:
+2025-10-30 17:13:22     max_snapshots: 5
+2025-10-30 17:13:22     save_epochs: 50
+2025-10-30 17:13:22     save_optimizer_state: False
+2025-10-30 17:13:22 train_settings:
+2025-10-30 17:13:22   batch_size: 8
+2025-10-30 17:13:22   dataloader_workers: 0
+2025-10-30 17:13:22   dataloader_pin_memory: False
+2025-10-30 17:13:22   display_iters: 1000
+2025-10-30 17:13:22   epochs: 200
+2025-10-30 17:13:22   seed: 42
+2025-10-30 17:13:22 Loading pretrained weights from Hugging Face hub (timm/resnet50_gn.a1h_in1k)
+2025-10-30 17:13:23 HTTP Request: HEAD https://huggingface.co/timm/resnet50_gn.a1h_in1k/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+2025-10-30 17:13:23 [timm/resnet50_gn.a1h_in1k] Safe alternative available for 'pytorch_model.bin' (as 'model.safetensors'). Loading weights using safetensors.
+2025-10-30 17:13:23 Data Transforms:
+2025-10-30 17:13:23   Training:   Compose([
+  Affine(always_apply=False, p=0.5, interpolation=1, mask_interpolation=0, cval=0, mode=0, scale={'x': (0.5, 1.25), 'y': (0.5, 1.25)}, translate_percent=None, translate_px={'x': (0, 0), 'y': (0, 0)}, rotate=(-30, 30), fit_output=False, shear={'x': (0.0, 0.0), 'y': (0.0, 0.0)}, cval_mask=0, keep_ratio=True, rotate_method='largest_box'),
+  PadIfNeeded(always_apply=True, p=1.0, min_height=448, min_width=448, pad_height_divisor=None, pad_width_divisor=None, position=PositionType.CENTER, border_mode=0, value=None, mask_value=None),
+  KeypointAwareCrop(always_apply=True, p=1.0, width=448, height=448, max_shift=0.1, crop_sampling='hybrid'),
+  MotionBlur(always_apply=False, p=0.5, blur_limit=(3, 7), allow_shifted=True),
+  GaussNoise(always_apply=False, p=0.5, var_limit=(0, 162.5625), per_channel=True, mean=0),
+  Normalize(always_apply=False, p=1.0, mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225], max_pixel_value=255.0),
+], p=1.0, bbox_params={'format': 'coco', 'label_fields': ['bbox_labels'], 'min_area': 0.0, 'min_visibility': 0.0, 'min_width': 0.0, 'min_height': 0.0, 'check_each_transform': True}, keypoint_params={'format': 'xy', 'label_fields': ['class_labels'], 'remove_invisible': False, 'angle_in_degrees': True, 'check_each_transform': True}, additional_targets={}, is_check_shapes=True)
+2025-10-30 17:13:23   Validation: Compose([
+  Normalize(always_apply=False, p=1.0, mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225], max_pixel_value=255.0),
+], p=1.0, bbox_params={'format': 'coco', 'label_fields': ['bbox_labels'], 'min_area': 0.0, 'min_visibility': 0.0, 'min_width': 0.0, 'min_height': 0.0, 'check_each_transform': True}, keypoint_params={'format': 'xy', 'label_fields': ['class_labels'], 'remove_invisible': False, 'angle_in_degrees': True, 'check_each_transform': True}, additional_targets={}, is_check_shapes=True)
+2025-10-30 17:16:15 C:\medaka\labeled-data\test\CollectedData_nakayama.h5
+2025-10-30 17:16:15  
+2025-10-30 17:16:15  not found (perhaps not annotated).
+2025-10-30 17:16:15 C:\medaka\labeled-data\output_20240809\CollectedData_nakayama.h5
+2025-10-30 17:16:15  
+2025-10-30 17:16:15  not found (perhaps not annotated).
+2025-10-30 17:16:17 Training dataset successfully created.
